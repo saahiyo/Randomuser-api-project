@@ -4,202 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Random User Data Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
-<main id="mainDiv" >
+<main id="mainDiv">
    <div class="topbar">
      <h1> user data : </h1>
    </div>
-   <div class="divider" ></div>
+   <div class="divider"></div>
    <div class="proinfo">
       <p>The Random User API generates random user data for testing or demo purposes in web development.</p>
    </div>
-    <div class="divider" ></div>
+    <div class="divider"></div>
 
-<div class="btnContainer" >
-  <button class="refBtn" onclick="callApi()" > Refresh </button>
- <div>
- 
+<div class="btnContainer">
+  <button class="refBtn" onclick="callApi()">Refresh</button>
+ </div>
+
  <div id="barContainer"> 
-    <div class="databar3" >
-       <img src="user.png" >
-       <div class="dataright" >
-          <h3> unknown </h3>
-          <p> unknown@gmail.com</p>
-       </div>
-    </div>
-<div class="databar3" >
-   <img src="user.png" >
-   <div class="dataright" >
-      <h3> unknown </h3>
-      <p> unknown@gmail.com</p>
-   </div>
-</div>
-<div class="databar3" >
-   <img src="user.png" >
-   <div class="dataright" >
-      <h3> unknown </h3>
-      <p> unknown@gmail.com</p>
-   </div>
-</div>
-
  </div>
 </main>
 
+<script src="script.js"></script>
 </body>
-<style type="text/css">
-
-:root {
-  --backgroundColor: #F5F5F5; /* main background */
-  --primaryBlack:#BDBDBD; /* Top elements background */
-  --primaryColor:#757575; /* Top elements text color */
-  --darkColor:#424242; /* black border */
-  --gray:#E0E0E0; /* bar background color */
-  --white:#fff; /* simple white color */
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body,html{
-  height: 100%;
-  width: 100%;
-  background-color: var(--backgroundColor);
-}
-main {
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-}
-.topbar {
-  width:90%;
-  height:60px;
-  padding:10px;
-  background-color:var(--primaryBlack);
-  border-radius:100px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:var(--primaryColor);
-  margin:15px ;
-}
-.divider  {
-  width:100%;
-  height:10px;
-  border:3px double var(--primaryBlack);
-}
-.proinfo {
-  width:95%;
-  padding:25px 20px;
-  background-color:var(--primaryBlack);
-  margin:20px 0;
-  border-radius:10px;
-  font-family:monospace;
-  color:var(--primaryColor);
-  font-weight:700;
-  font-size:15px;
-}
-
-#barContainer {
-  width:100%;
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  padding-bottom:20px;
-}
-
-.databar3 {
-  width:95%;
-  margin-top:15px;
-  padding:15px;
-  background-color:var(--gray);
-  border-radius:10px;
-  border:2px solid var(--darkColor);
-  align-items:center;
-  display:flex;
-}
-.databar3:active {
-  border-bottom:5px solid var(--darkColor);
-  border-right:4px solid var(--darkColor);
- }
-.databar3 img {
- height:45px;
-  width:45px;
-  margin-left:5px;
-  border-radius:50%;
-}
-.dataright {
-  margin-left:15px;
-}
-.dataright h3 {
-  opacity:70%;
-  font-weight:800;
-}
-.dataright p {
-  opacity:50%;
-}
-.databar img {
- height:45px;
-  width:45px;
-  margin-left:5px;
-}
-.dataright {
-  margin-left:15px;
-}
-.dataright h3 {
-  opacity:70%;
-  font-weight:800;
-}
-.dataright p {
-  opacity:50%;
-}
-.refBtn {
-  padding:13px 25px;
-  color:#fff;
-  background-color: #212121;
-  border:none;
-  border-radius:4px;
-  font-weight:bold;
-  margin:10px 20px 0;
-}
-.refBtn:active {
-  background-color:#fff;
-  border:2px solid #000;
-  color:#000;
-  transition:0.5s all;
-}
-.btnContainer {
-  width:100%;
-}
-</style>
-<script type="text/javascript">
-    var main = document.getElementById("barContainer");
-
-    async function callApi(){
-        let url = "https://randomuser.me/api/?results=15";
-        let get = await fetch(url);
-        let res = await get.json();
-      
-                
-        var clutter = " ";
-                
-       res.results.forEach(users => {
-          clutter += `<div class="databar3" >
-		          <img src="${users.picture.thumbnail}" >
-		          <div class="dataright" >
-		          <h3> ${users.name.first} ${users.name.last} </h3>
-		          <p> ${users.email}</p>
-		          </div>
-		          </div>`
-		  
-		  main.innerHTML = clutter;
-       })
-    }
- callApi()
-   
-</script>
 </html>
