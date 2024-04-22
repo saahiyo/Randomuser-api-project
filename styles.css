@@ -1,0 +1,109 @@
+:root {
+  --backgroundColor: #F5F5F5; /* main background */
+  --primaryBlack:#BDBDBD; /* Top elements background */
+  --primaryColor:#757575; /* Top elements text color */
+  --darkColor:#424242; /* black border */
+  --gray:#E0E0E0; /* bar background color */
+  --white:#fff; /* simple white color */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html{
+  height: 100%;
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
+main {
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+}
+.topbar {
+  width:90%;
+  height:60px;
+  padding:10px;
+  background-color:var(--primaryBlack);
+  border-radius:100px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:var(--primaryColor);
+  margin:15px ;
+}
+.divider {
+  width:100%;
+  height:10px;
+  border:3px double var(--primaryBlack);
+}
+.proinfo {
+  width:95%;
+  padding:25px 20px;
+  background-color:var(--primaryBlack);
+  margin:20px 0;
+  border-radius:10px;
+  font-family:monospace;
+  color:var(--primaryColor);
+  font-weight:700;
+  font-size:15px;
+}
+
+#barContainer {
+  width:100%;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  padding-bottom:20px;
+}
+
+.databar3 {
+  width:95%;
+  margin-top:15px;
+  padding:15px;
+  background-color:var(--gray);
+  border-radius:10px;
+  border:2px solid var(--darkColor);
+  align-items:center;
+  display:flex;
+}
+.databar3:active {
+  border-bottom:5px solid var(--darkColor);
+  border-right:4px solid var(--darkColor);
+}
+.databar3 img {
+ height:45px;
+  width:45px;
+  margin-left:5px;
+  border-radius:50%;
+}
+.dataright {
+  margin-left:15px;
+}
+.dataright h3 {
+  opacity:70%;
+  font-weight:800;
+}
+.dataright p {
+  opacity:50%;
+}
+.refBtn {
+  padding:13px 25px;
+  color:#fff;
+  background-color: #212121;
+  border:none;
+  border-radius:4px;
+  font-weight:bold;
+  margin:10px 20px 0;
+}
+.refBtn:active {
+  background-color:#fff;
+  border:2px solid #000;
+  color:#000;
+  transition:0.5s all;
+}
+.btnContainer {
+  width:100%;
+}
